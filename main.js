@@ -3,13 +3,11 @@ let title = document.head.children[1];
 let name = document.querySelector('h1.user__name');
 let bio = document.querySelector('p.user-info__description');
 let div = document.querySelector('div.user-info');
-let time = document.querySelector('.time');
+let time = document.createElement('div');
 let searchParams = new URLSearchParams(window.location.search);
 let login = searchParams.get('username');
 let preload = document.querySelector('.preloader')
 let apiUrl = 'https://api.github.com/users/' + login;
-let pic;
-let link;
 
 
 const getDate = new Promise((resolve, reject) => {
@@ -43,6 +41,8 @@ function UserInfo(Name){
             div.insertBefore(pic, div.children[0]);
 
             time.innerHTML = date;
+            div.appendChild(time);
+
         }
     })
     Promise.all([getDate, getName, request])}
