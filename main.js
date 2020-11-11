@@ -5,13 +5,12 @@ let bio = document.querySelector('p.user-info__description');
 let div = document.querySelector('div.user-info');
 let searchParams = new URLSearchParams(window.location.search);
 let login = searchParams.get('username');
-let preload = document.querySelector('.preloader')
+let preload = document.querySelector('.preloader');
 let apiUrl = 'https://api.github.com/users/' + login;
 
 
 const getDate = new Promise((resolve, reject) => {
-    setTimeout(() => date ? resolve(date) : reject("Out of date"), 1500);
-});
+    setTimeout(() => date ? resolve(date) : reject("Out of date"), 1500);});
 const getName = new Promise((resolve, reject) => {
       setTimeout(() => login ? resolve(login) : reject('имя не найдено, отображается пользователь по умолчанию'), 3000)});
 
@@ -41,7 +40,8 @@ function UserInfo(Name){
 
             let time = document.createElement('p');
             time.innerHTML = date;
-            div.appendChild(time);
+            div.insertBefore(time, div.firstChild)
+            
 
             let login = document.createElement('h3');
             login.classList.add('login');
