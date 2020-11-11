@@ -14,13 +14,13 @@ const getDate = new Promise((resolve, reject) => {
     setTimeout(() => date ? resolve(date) : reject("Out of date"), 1500);
 });
 const getName = new Promise((resolve, reject) => {
-      setTimeout(() => login ? resolve(login) : reject('имя не найдено, отображается пользователь по умолчанию'), 3000);
+      setTimeout(() => login ? resolve(login) : reject('имя не найдено, отображается пользователь по умолчанию'), 3000)});
 
 const preloader = setTimeout(() => {
       document.body.classList.add('loaded_hiding');
         document.body.classList.add('loaded');
         document.body.classList.remove('loaded_hiding');
-      }, 3000);
+      }, 2000);
 
 function UserInfo(Name){
     let request = fetch(apiUrl)
