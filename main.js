@@ -3,7 +3,6 @@ let title = document.head.children[1];
 let name = document.querySelector('h1.user__name');
 let bio = document.querySelector('p.user-info__description');
 let div = document.querySelector('div.user-info');
-let time = document.createElement('div');
 let searchParams = new URLSearchParams(window.location.search);
 let login = searchParams.get('username');
 let preload = document.querySelector('.preloader')
@@ -40,8 +39,14 @@ function UserInfo(Name){
             pic.setAttribute('src', user.avatar_url);
             div.insertBefore(pic, div.children[0]);
 
+            let time = document.createElement('p');
             time.innerHTML = date;
             div.appendChild(time);
+
+            let login = document.createElement('h3');
+            login.classList.add('login');
+            login.innerHTML = user.login;
+            name.appendChild(login);
 
         }
     })

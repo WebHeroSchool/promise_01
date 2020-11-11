@@ -13,6 +13,7 @@ body  {
 }
 
 .user-info__pic  {
+	 max-width: 100%;
     height: auto;
     border: 3px outset #000;
 
@@ -25,6 +26,10 @@ body  {
     background: lightblue;
     border-radius: 10px;
 } 
+.login {
+	text-align: center;
+	margin: 10px auto;
+}
 body {
       margin: 0;
     }
